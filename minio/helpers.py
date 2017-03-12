@@ -564,8 +564,8 @@ def optimal_part_info(length):
 
     # Use floats for part size for all calculations to avoid
     # overflows during float64 to int64 conversions.
-    part_size_float = math.ceil(length/MAX_MULTIPART_COUNT)
-    part_size_float = (math.ceil(part_size_float/MIN_OBJECT_SIZE)
+    part_size_float = float(math.ceil(length/MAX_MULTIPART_COUNT))
+    part_size_float = float(math.ceil(part_size_float/MIN_OBJECT_SIZE)
                        * MIN_OBJECT_SIZE)
     # Total parts count.
     total_parts_count = int(math.ceil(length/part_size_float))
